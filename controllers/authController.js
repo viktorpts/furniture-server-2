@@ -1,6 +1,6 @@
-const { register, login, logout } = require('../services/userService');
-
 const authController = require('express').Router();
+
+const { register, login, logout } = require('../services/userService');
 
 
 authController.post('/register', async (req, res) => {
