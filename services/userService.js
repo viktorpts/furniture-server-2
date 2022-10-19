@@ -53,7 +53,11 @@ function createToken(user) {
 }
 
 function parseToken(token) {
-    // TODO scna blacklist for token
+    if (tokenBlacklist.has(token)) {
+        throw new Error('Token is blacklisted');
+    }
+
+    return jwt.verify(token, secret);
 }
 
 module.exports = {
